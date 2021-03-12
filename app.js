@@ -1,14 +1,34 @@
 const form = document.querySelector('form');
 const input = document.querySelector('input');
-const list = document.querySelector('#list');
+const listItems = document.querySelector('#listItems');
+
+const holdDiv = document.createElement('div');
+const newItem = document.createElement('p');
+const doneButton = document.createElement('button');
+const delButton = document.createElement('button');
 
 form.addEventListener('submit', function(e){
-    e.preventDefault();
-    const newItem = document.createElement('li');
-    newItem.innerText = input.value;
-    newItem.className = 'toDoItem';
-    list.append(newItem);
-    input.value = "";
+    newTodoAdd(e);
+});
+
+delButton.addEventListener('click', function(e){
+    listItems.remove();
 })
 
-//put it all in a div and add buttons
+function newTodoAdd(e){
+    e.preventDefault();
+    newItem.innerText = input.value;
+    newItem.className = 'toDoItem';
+    doneButton.className = 'button';
+    delButton.className = 'button';
+    delButton.innerText = 'Delete';
+    doneButton.innerText = 'Done!';
+    holdDiv.append(newItem);
+    holdDiv.append(delButton);
+    holdDiv.append(doneButton);
+    listItems.append(holdDiv);
+    input.value = "";
+}
+
+//add more todos instead of just one
+//to do class functionality on button

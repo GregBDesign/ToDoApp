@@ -1,13 +1,26 @@
 body {
-    text-align: center;
-    width: 800px;
+    width: 80%;
     margin: 0 auto;
 }
 
-input {
-    width: 80%;
+section {
+    margin-bottom: 5%;
 }
 
-.toDoItem {
-    text-align: left;
+input {
+    width: 60%;
+}
+
+div {
+    display: inline;
+}
+
+p{
+    display: inline;
+    margin: 5% 5%;
+}
+
+.button {
+    width: 20%;
+    height: 20%;
 }

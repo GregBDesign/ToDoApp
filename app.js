@@ -15,8 +15,8 @@ delButton.addEventListener('click', function(e){
     listItems.remove();
 })
 
-function newTodoAdd(e){
-    e.preventDefault();
+function newTodoAdd(evt){
+    evt.preventDefault();
     newItem.innerText = input.value;
     newItem.className = 'toDoItem';
     doneButton.className = 'button';
@@ -30,5 +30,8 @@ function newTodoAdd(e){
     input.value = "";
 }
 
-//add more todos instead of just one
+//add more todos instead of just one - may need to go back to LIs
 //to do class functionality on button
+
+
+

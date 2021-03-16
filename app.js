@@ -1,37 +1,35 @@
-const form = document.querySelector('form');
+const submit = document.querySelector('#submitBtn');
 const input = document.querySelector('input');
-const listItems = document.querySelector('#listItems');
+const addedBtns = document.querySelector('button');
+const divContainer = document.createElement('div');
+const newLi = document.createElement('li');
+const todoList = document.querySelector('ul');
+const buttonText = ['Delete', 'Done'];
 
-const holdDiv = document.createElement('div');
-const newItem = document.createElement('p');
-const doneButton = document.createElement('button');
-const delButton = document.createElement('button');
-
-form.addEventListener('submit', function(e){
-    newTodoAdd(e);
-});
-
-delButton.addEventListener('click', function(e){
-    listItems.remove();
+submit.addEventListener('click', function(e){
+    e.preventDefault();
+    createTodo();
 })
 
-function newTodoAdd(evt){
-    evt.preventDefault();
-    newItem.innerText = input.value;
-    newItem.className = 'toDoItem';
-    doneButton.className = 'button';
-    delButton.className = 'button';
-    delButton.innerText = 'Delete';
-    doneButton.innerText = 'Done!';
-    holdDiv.append(newItem);
-    holdDiv.append(delButton);
-    holdDiv.append(doneButton);
-    listItems.append(holdDiv);
+createTodo = () => {
+    newLi.textContent = input.value;
+    divContainer.append(newLi);
+    for(let i = 0 ; i < buttonText.length; i++){
+        const newButton = document.createElement('button');
+        newButton.textContent = buttonText[i];
+        newButton.classList.add('libtn');
+        divContainer.append(newButton);
+    }
+    todoList.append(divContainer);
     input.value = "";
 }
 
-//add more todos instead of just one - may need to go back to LIs
-//to do class functionality on button
+checkFunc = (e) => {
+    let btnType = e.target;
+    if(btnType.textContent === 'Delete'){
+        this.newLi.remove();
+        //Check udemy vid on .this??
+    }
+}
 
-
-
+document.addEventListener('click', checkFunc);

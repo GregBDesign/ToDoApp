@@ -1,26 +1,4 @@
-body {
-    width: 80%;
-    margin: 0 auto;
-}
-
-section {
-    margin-bottom: 5%;
-}
-
-input {
-    width: 60%;
-}
-
-div {
-    display: inline;
-}
-
-p{
-    display: inline;
-    margin: 5% 5%;
-}
-
-.button {
-    width: 20%;
-    height: 20%;
+.libtn {
+    height: 90%;
+    margin: 5px;
 }

@@ -2,3 +2,8 @@
     height: 90%;
     margin: 5px;
 }
+
+.done {
+    text-decoration: line-through;
+    color: grey;
+}
